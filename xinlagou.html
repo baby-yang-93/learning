@@ -1,0 +1,2848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拉钩</title>
+    <style>
+        body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre,
+        dl, dt, dd, ul, ol, li, th, td, div, span, img,
+        fieldset, lengend, button, input, select, textarea{margin: 0;padding: 0;}
+        /* color & background */
+        html{color:#000; background:#FFF;}
+        /* font */
+        body, button, input, select, textarea { /* for ie */
+            font: 12px/18px Arial, Verdana, Microsoft YaHei;
+        }
+        /* fix center */
+        html,body {height: 100%;margin: 0 auto;}
+        /* h1~h6 */
+        h1 {font-size: 18px;}
+        h2 {font-size: 16px;}
+        h3 {font-size: 14px;}
+        h4, h5, h6 {font-size: 100%;}
+        /* a */
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        /* list */
+        ul,ol {list-style: none;}
+        /* img border */
+        fieldset,img{border: 0}
+        /* table */
+        table {border-collapse: collapse;border-spacing: 0;font:inherit;}
+        /* margin */
+        .alpha {margin-left: 0;}
+        .omega {margin-right: 0;}
+        /* float & clear */
+        .left{float:left;}
+        .right{float:right;}
+        .clear {clear: both;display: block;}
+        /* clearfix */
+        .clearfix:after{content:".";display:block;}
+        .clearfix{display:inline-table;}
+        /* Hides from IE-mac */
+        * html .clearfix{height:1%;}
+        .clearfix{display:block;}
+        /* End hide from IE-mac */
+        *+html .clearfix{min-height:1%;}/* IE7 */
+
+        /*黑色部分*/
+        body {
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", SimSun, Arial, "Helvetica Neue", Helvetica;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .black {
+            height: 30px;
+            background-color: #333333;
+        }
+
+        .green-app {
+            color: #05eaaf;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/header_c/modules/img/app_icon_0495d1d.png) 10px 0 no-repeat;
+            font-size: 14px;
+            padding: 0 12px 0 27px;
+        }
+
+        .app, .app2, .app1 {
+            font-size: 14px;
+            color: #c4c3c3;;
+        }
+
+        .app0, .app {
+            float: left;
+            line-height: 30px;
+        }
+
+        .app0 {
+            margin-left: 140px;
+        }
+
+        .app2 {
+            border-left: 1px solid #5d5d5d;
+            padding: 0 0 0 12px;
+        }
+
+        .app {
+            margin-left: 1040px;
+        }
+
+        .app1 {
+            padding-right: 12px;
+        }
+
+        .app a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .app0 a:hover {
+            text-decoration: none;
+        }
+
+        .app0 .app2:hover {
+            color: #FFFFFF;
+        }
+
+        /*灰色头部*/
+        .gary-head {
+            height: 54px;
+            border-bottom: 1px solid #e5e5e5;
+            background-color: #fafafa;
+        }
+
+        .juzhong {
+            width: 1022px;
+            margin: auto;
+            height: 54px;
+        }
+
+        .quanguo {
+            width: 260px;
+            height: 54px;
+            padding-top: 10px;
+            float: left;
+            margin-left: -37px
+        }
+
+        .logo-1 {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/header_c/modules/img/logo_1c5763c.png) no-repeat;
+            width: 97px;
+            height: 34px;
+            display: block;
+            float: left;
+        }
+
+        .quanguo span {
+            color: #333;
+            font-size: 18px;
+            font-weight: 400;
+            display: block;
+            float: left;
+            padding: 15px 8px 0 12px;
+        }
+
+        .city {
+            color: #999;
+            font-size: 12px;
+            display: block;
+            margin-top: 18px;
+        }
+
+        .shouye {
+            width: 407px;
+            height: 55px;
+            float: left;
+        }
+
+        .shouye p {
+            font-size: 18px;
+            line-height: 55px;
+            padding: 0 20px 0 12px;
+            display: inline-block;
+        }
+
+        .sy {
+            color: #333333;
+            border-bottom: 2px solid #00b38a;
+            padding: 0 5px;
+            display: inline-block;
+            height: 53px;
+        }
+
+        .gongsi {
+            padding: 0 5px;
+            display: inline-block;
+            height: 53px;
+            color: #999999;
+        }
+
+        .gongsi:hover {
+            color: #333333;
+            border-bottom: 2px solid #00b38a;
+        }
+
+        /*定位部分*/
+        .Position-big {
+            width: 1024px;
+            padding-top: 35px;
+            margin: auto;
+        }
+
+        .js-block {
+            /*width: 204px;*/
+            padding: 6px 12px;
+            /*border: 2px solid #fafafa;*/
+            float: left;
+            background-color: #fafafa;
+            z-index: 2;
+            position: relative;
+        }
+
+        .js-block a {
+            display: inline-block;
+        }
+
+        .js-block:hover {
+            /*background-color: #FFFFFF;*/
+            color: #00b38a;
+            /*border-top: #c9cbce 2px solid;*/
+            /*border-left: #c9cbce 2px solid;*/
+            /*border-bottom: #c9cbce 2px solid;*/
+
+        }
+
+        .js {
+            font-size: 18px;
+            margin: 10px 0;
+            padding-left: 8px;
+            font-weight: 500;
+            color: #333333;
+        }
+
+        .js span {
+            background: url(https://www.lgstatic.com/www/static/index/modules/sidebar/img/arr_6c6ecd7.png) no-repeat;
+            width: 13px;
+            height: 14px;
+            display: block;
+            float: right;
+        }
+
+        .js-word {
+            margin: 0 5px 5px 0;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #555;
+            line-height: 27px;
+        }
+
+        .js-word:hover {
+            color: #00b38a;
+        }
+
+        .hied-js {
+            width: 540px;
+            padding: 15px 30px 5px 30px;
+            float: left;
+            border: #c9cbce 2px solid;
+            /*margin-left: -2px;*/
+            z-index: 1;
+            position: absolute;
+            left: 230px;
+            background-color: #FFFFFF;
+            display: none;
+        }
+
+        .hdkf-word {
+            width: 440px;
+            float: left;
+            margin-left: 16px;
+        }
+
+        .hdkf {
+            color: #333333;
+        }
+
+        .hdkf-block p {
+            width: 70px;
+            height: 28px;
+            float: left;
+            margin-left: 14px;
+            margin-top: 5px;
+        }
+
+        .hdkf-block a {
+            font-size: 14px;
+        }
+
+        .hdkf-word a {
+            color: #777;
+            line-height: 28px;
+            display: inline-block;
+            margin: 0 10px 0 5px;
+        }
+
+        .you {
+            border-right: 1px solid #999999;
+            display: inline-block;
+            height: 12px;
+            margin-left: 11px;
+        }
+
+        .hdkf-word .green-word {
+            color: #00b38a;
+        }
+
+        .hdkf-word a:hover {
+            color: #00b38a;;
+        }
+
+        .hdkf-block {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .left-lb {
+            width: 230px;
+            position: relative;
+            float: left;
+        }
+
+        .kongzhi .js-block {
+            float: none;
+        }
+
+        /*.width-dandu {*/
+        /*width: 206px;*/
+        /*}*/
+        .jr {
+            background: url(https://www.lgstatic.com/www/static/index/modules/sidebar/img/newLabel_a3b2897.png) no-repeat;
+            background-position: 46px 0px;
+        }
+
+        .tz {
+            padding: 0 7px;
+        }
+
+        .dyzw {
+            width: 210px;
+            height: 46px;
+            padding-left: 20px;
+            float: left;
+            margin-top: 12px;
+            border-bottom: 2px solid rgb(0%, 70.2%, 54.1%);
+            background: #fafafa url(https://www.lgstatic.com/www/static/index/modules/sidebar/img/arr_btn_34cdbac.png) no-repeat 180px -4px;
+        }
+
+        .dyzw a:hover {
+            color: #00b38a;
+        }
+
+        .dyzw a {
+            color: #555;
+            font-size: 18px;
+            line-height: 46px;
+        }
+
+        /*右边内容部分*/
+        .right-dingwei {
+            width: 744px;
+            /*float: right;*/
+            margin-left: 280px;
+        }
+
+        .sousuo-1 {
+            width: 570px;
+            height: 23px;
+            padding: 5px 8px 5px 10px;
+            border: 2px rgb(0%, 65.1%, 50.2%) solid;
+            font-size: 16px;
+            color: rgb(153, 153, 153);
+        }
+
+        .sousuo-2 {
+            width: 146px;
+            height: 37px;
+            background-color: #00b38a;
+            border: 2px solid #00b38a;
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+
+        .sousuo-2:hover {
+            background-color: #00a57f;
+            border: #00a57f;
+        }
+
+        .remen {
+            width: 744px;
+            margin: 6px 0 18px 0;
+            font-size: 14px;
+        }
+
+        .remen a {
+            color: #00b38a;
+            display: inline-block;
+            margin-right: 17px;
+        }
+
+        .img-all {
+            width: 744px;
+            height: 160px;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-one {
+            display: inline-block;
+            width: 612px;
+            height: 160px;
+            float: left;
+        }
+
+        .img-two {
+            width: 114px;
+            height: 42px;
+            display: inline-block;
+            opacity: 0.9;
+        }
+
+        .img-right {
+            width: 121px;
+            height: 160px;
+            float: right;
+
+        }
+
+        .img-right p {
+            width: 114px;
+            height: 42px;
+            border: 4px solid rgb(83.1%, 83.1%, 83.1%);
+            margin-bottom: 6px;
+
+        }
+
+        .tupian-all {
+            width: 744px;
+            height: 118px;
+            margin-bottom: 25px;
+        }
+
+        .all {
+            position: relative;
+            width: 113px;
+            height: 113px;
+            float: left;
+            margin-right: 12px;
+        }
+
+        .all-6 {
+            margin-right: 0;
+        }
+
+        .lower {
+            display: block;
+            width: 112px;
+            height: 112px;
+            border: 1px solid #c9cbce;
+            z-index: 1;
+            /*float: left;*/
+        }
+
+        .upper {
+            background: rgba(0, 179, 138, .9);
+            width: 114px;
+            height: 113px;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            display: none;
+        }
+
+        .big-size {
+            font-size: 24px;
+            height: 24px;
+            line-height: 24px;
+            padding: 10px 8px 8px;
+            font-weight: 400;
+            text-align: center;
+            overflow: hidden;
+            color: #fff;
+            width: 97px;
+        }
+
+        .kong {
+            width: 100px;
+            height: 5px;
+            margin: 0 6px;
+            background-color: rgba(255, 255, 255, .3);
+        }
+
+        .small-size {
+            font-size: 12px;
+            margin: 6px 8px;
+            line-height: 18px;
+            color: #FFFFFF;
+            width: 97px;
+        }
+
+        #greenBox {
+            width: 114px;
+            height: 42px;
+            border: 4px solid rgb(47.1%, 83.1%, 74.9%);
+            position: absolute;
+            top: 0;
+            float: none;
+        }
+
+        #bigImgBox {
+            position: absolute;
+        }
+
+        .List-header {
+            width: 744px;
+            border-bottom: #f6f6f6;
+            background-color: #f6f6f6;
+            float: left;
+        }
+
+        .List-content {
+            float: left;
+            height: 22px;
+            font-size: 18px;
+            padding: 10px 20px 4px 20px;
+            border-bottom: 1px solid #f6f6f6;
+        }
+
+        .hot-zw {
+            background-color: #FFFFFF;
+            border-top: 3px solid #00b38a;
+        }
+
+        .new-zw {
+            color: #999999;
+        }
+
+        .list-xijie {
+            width: 729px;
+            padding: 22px 0 0 15px;
+            float: left;
+            position: relative;
+        }
+
+        .job-name1 {
+            font-size: 16px;
+            color: #00b38a;
+            line-height: 28px;
+        }
+
+        .job-name {
+            width: 400px;
+            float: left;
+            position: relative;
+        }
+
+        .job-name span {
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .name-card {
+            background: url(https://www.lgstatic.com/www/static/index/modules/job_list/img/icon-chat_4a70ffc.png) no-repeat 0 0;
+            width: 25px;
+            height: 25px;
+            float: left;
+            position: absolute;
+            margin-left: 10px;
+        }
+
+        .hide-nameCard {
+            width: 344px;
+            height: 164px;
+            border: 1px solid #dce4e6;
+            border-radius: 3px;
+            box-shadow: 1px 1px 2px #f2f2f2;
+            position: absolute;
+            background-color: #FFFFFF;
+            float: left;
+            left: 50px;
+            top: -32px;
+            display: none;
+            z-index: 99;
+        }
+
+        .hide-xinxi {
+            width: 184px;
+            height: 130px;
+            padding: 16px 0 0 16px;
+        }
+
+        .picture {
+            width: 62px;
+            height: 62px;
+            background-color: #7ED321;
+            border-radius: 100px;
+            float: left;
+        }
+
+        .picture span {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 62px;
+            text-align: center;
+            display: inline-block;
+            width: 43px;
+        }
+
+        .ganwei-name {
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+            color: #333;
+            line-height: 30px;
+            margin-left: 7px;
+            float: left;
+        }
+
+        .suoxie {
+            width: 100px;
+            height: 24px;
+            margin-left: 7px;
+            float: left;
+        }
+
+        .hi {
+            width: 184px;
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 22px;
+            color: #333;
+            float: left;
+        }
+
+        .hideBox {
+            float: left;
+            position: absolute;
+            left: 236px;
+            top: -1px;
+        }
+
+        /*#hideBox,.hide-nameCard {*/
+        /*float: none;*/
+        /*}*/
+        .lianjie {
+            height: 120px;
+            width: 60px;
+        }
+
+        .company-name {
+            width: 294px;
+            height: 34px;
+            font-size: 16px;
+            color: #00b38a;
+            float: left;
+            margin-left: 34px;
+            line-height: 27px;
+        }
+
+        .daiyu {
+            width: 400px;
+            height: 28px;
+            float: left;
+        }
+
+        .gongzi {
+            font-size: 16px;
+            color: #fa6041;
+            margin-right: 20px;
+            line-height: 22px;
+        }
+
+        .jingyan {
+            font-size: 14px;
+            color: #000000;
+            line-height: 22px;
+        }
+
+        .company-xijie {
+            width: 294px;
+            height: 28px;
+            float: left;
+            font-size: 14px;
+            line-height: 22px;
+            color: #333333;
+            margin-left: 34px;
+        }
+
+        .biaoqian {
+            width: 714px;
+            height: 38px;
+            padding: 0 15px;
+            background-color: #fafafa;
+            float: left;
+            margin-left: -17px;
+            border-bottom: 1px dashed rgb(90.2%, 90.2%, 90.2%);
+        }
+
+        .biaoqian span {
+            font-size: 12px;
+            color: #555555;
+            border: 1px solid #dcdcdc;
+            height: 20px;
+            line-height: 20px;
+            display: inline-block;
+            padding: 0 5px;
+            margin: 9px 8px 0 0;
+            border-radius: 4px;
+        }
+
+        .biaoqian-left {
+            width: 400px;
+            float: left;
+        }
+
+        .wuxian {
+            margin-left: 32px;
+            line-height: 43px;
+            height: 39px;
+            width: 282px;
+        }
+
+        .xuanzhuan {
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+            border-left: 1px solid #dce4e6;
+            border-top: 1px solid #dce4e6;
+            transform: rotate(-45deg);
+            border-top: 1px solid #dce4e6;
+            position: absolute;
+            z-index: 10;
+            left: -18px;
+            top: 31px;
+        }
+
+        #newZw {
+            display: none;
+        }
+
+        .look-more {
+            display: block;
+            width: 64px;
+            height: 22px;
+            padding: 8px 40px 5px 15px;
+            color: #fff;
+            float: right;
+            margin-top: 25px;
+            background: #00b38a url(//www.lgstatic.com/www/static/index/modules/job_list/img/arrow_54116b2.png) 88px center no-repeat;
+        }
+
+        .lookMore {
+            font-size: 16px;
+        }
+
+        .look-more:hover {
+            background-color: #00a57f;
+        }
+
+        .friendship {
+            width: 744px;
+            border-top: 1px solid rgb(92.9%, 92.9%, 92.9%);
+            margin-top: 40px;
+            float: left;
+            padding-top: 15px;
+        }
+
+        .friend {
+            font-size: 15px;
+            color: #000000;
+        }
+
+        .friendship a {
+            font-size: 12px;
+            color: #555555;
+            padding: 8px 8px;
+        }
+
+        .friendship a:hover {
+            color: #00b38a;;
+        }
+
+        .fuhao {
+            display: inline-block;
+            font-size: 12px;
+            line-height: 15px;
+            color: #999999;
+
+        }
+
+        #zhankai {
+            padding: 8px 15px 8px 17px;
+            background: url(https://www.lgstatic.com/www/static/index/modules/friendlink/img/arrow_down_c415674.png) no-repeat;
+            background-position: 44px 14px;
+        }
+
+        .footer {
+            width: 1583px;
+            height: 65px;
+            border-top: 1px solid #ebebeb;
+            background-color: #FFFFFF;
+            float: left;
+            margin-top: 100px;
+        }
+
+        .lg-new img {
+            width: 256px;
+            height: 256px;
+            border: 3px solid #0D9572;
+            position: absolute;
+            z-index: 10002;
+            top: -269px;
+            left: 0;
+            display: none;
+        }
+
+        .bj img {
+            /*display: none;*/
+            border: 3px solid #0D9572;
+            position: absolute;
+            z-index: 10003;
+            top: -269px;
+            display: none;
+            width: 256px;
+            height: 256px;
+            left: 0;
+        }
+
+        .footer-dingwei {
+            width: 1024px;
+            height: 67px;
+            margin: auto;
+        }
+
+        .foot-img {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/footer_c/modules/img/footer_lagou_icon_75f0ebc.png) no-repeat;
+            display: block;
+            width: 198px;
+            height: 19px;
+            float: left;
+            margin-top: 12px;
+        }
+
+        .mafan {
+            position: relative;
+        }
+
+        .foot-word {
+            float: left;
+            margin-left: 28px;
+            padding-top: 12px;
+        }
+
+        .footer-2 {
+            float: left;
+            width: 1024px;
+            height: 12px;
+            /*margin: 15px 0 14px 0;*/
+        }
+
+        .foot-word a, .foot-word span {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .foot-word a {
+            display: block;
+            float: left;
+        }
+
+        .lg-new span {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/footer_c/modules/img/app-download/new_v1_a261f5c.png) no-repeat;
+            display: inline-block;
+            position: absolute;
+            z-index: 10000000;
+            width: 30px;
+            height: 16px;
+            left: 58px;
+        }
+
+        .lg-new {
+            position: relative;
+            margin-right: 39px;
+        }
+
+        .qrs {
+            font-size: 13px;
+        }
+
+        .bj {
+            margin-right: 14px;
+        }
+
+        .footer-3 a, .footer-3 span {
+            color: #d5d5d5;
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .footer-3 {
+            width: 450px;
+            margin: auto;
+        }
+
+        .footer-4 {
+            margin-top: -24px;
+            margin-left: 65px;
+
+        }
+
+        .fixed-1 {
+            width: 100%;
+            height: 64px;
+            position: fixed;
+            bottom: 38px;
+            z-index: 19999;
+        }
+
+        .fixed {
+            width: 1583px;
+            height: 64px;
+            margin-top: 38px;
+            float: left;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footerbar_repeat_e3527a7.png);
+            position: relative;
+        }
+
+        .zai {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_img_4a640f1.png) no-repeat;
+            position: absolute;
+            width: 95px;
+            height: 54px;
+            top: -54px;
+            left: 186px;
+        }
+
+        .fixed img {
+            display: block;
+            position: absolute;
+            top: 8px;
+            left: 184px;
+        }
+
+        .zai-gs {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_text_11fdeab.png) no-repeat;
+            margin: 18px 0 0 103px;
+            position: absolute;
+            display: block;
+            width: 28px;
+            height: 15px;
+        }
+
+        .zai-zw {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_text_11fdeab.png) no-repeat;
+            margin: 18px 0 0 284px;
+            position: absolute;
+            display: block;
+            width: 28px;
+            height: 15px;
+        }
+
+        .fixed p, .fixed a {
+            float: left;
+        }
+
+        .fixed p {
+            font-size: 32px;
+            line-height: 38px;
+            font-weight: 100;
+            color: #dafaf4;
+        }
+
+        .zai-dw {
+            width: 558px;
+            margin-left: 558px;
+            margin-top: 20px;
+        }
+
+        .zai-1 {
+            margin-right: 60px;
+        }
+
+        .dark-green {
+            position: absolute;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_login_400aa57.png) no-repeat;
+            width: 50px;
+            height: 64px;
+            margin: 0 46px;
+            top: 20px;
+        }
+
+        #shenlv {
+            width: 142px;
+            height: 64px;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 372px;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_btn_green_e62c2f7.png);
+        }
+
+        #shenlv:hover {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_btn_green_hover_5fe5f54.png);
+        }
+
+        #red {
+            width: 372px;
+            height: 64px;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_btn_red_d327566.png);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #red p {
+            width: 212px;
+            height: 64px;
+        }
+
+        #red p:hover {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_btn_red_hover_a2f9e1a.png);
+        }
+
+        #red a {
+            background: url(https://www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_register_787a590.png) no-repeat;
+            width: 120px;
+            height: 64px;
+            margin: 0 46px;
+            margin-top: 20px;
+        }
+
+        body {
+            position: relative;
+        }
+
+        #huojian-box {
+            position: fixed;
+            right: 208px;
+            bottom: 77px;
+            width: 50px;
+        }
+
+        .huojian {
+            display: block;
+            width: 28px;
+            height: 64px;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/footer_c/modules/img/backtop_6e69c27.png) no-repeat;
+            margin: 0 auto;
+        }
+
+        .fankui span {
+            width: 30px;
+            height: 30px;
+            background: url(https://www.lgstatic.com/www/static/common/widgets/footer_c/modules/img/feedback_776e64f.png) no-repeat;
+            display: block;
+            margin: 6px auto;
+        }
+
+        .am {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .huojian:hover {
+            background-position: right;
+        }
+
+        .fankui span:hover {
+            background-position: 0 -31px;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+    <script>
+        //        左边列表效果
+        $(function () {
+            var kongzhi = $('.kongzhi');
+            kongzhi.mouseenter(function () {
+                $(this).find('.hied-js').show();
+                $(this).find('.js-block').css({
+                    'background-color': '#ffffff', 'border-top': '#c9cbce 2px solid',
+                    'border-left': '#c9cbce 2px solid', 'border-bottom': ' #c9cbce 2px solid',
+                    'margin-right': '-2px'
+                });
+            });
+            kongzhi.mouseleave(function () {
+                $(this).find('.hied-js').hide();
+                $(this).find('.js-block').css({
+                    'background-color': '#fafafa', 'border-top': '#fafafa 2px solid',
+                    'border-left': '#fafafa 2px solid', 'border-bottom': ' #fafafa 2px solid',
+                    'margin-right': '0'
+                });
+            });
+
+            //        三张图片来回切换效果
+            $('.after-1').mouseenter(function () {
+                $('#greenBox').animate({top: 0}, 170);
+                $('.img-two').css('opacity', '0.8');
+                $(this).css('opacity', '1');
+                $('#bigImgBox').animate({top: 0}, 170);
+            });
+            $('.after-2').mouseenter(function () {
+                $('#greenBox').animate({top: 56}, 170);
+                $('.img-two').css('opacity', '0.8');
+                $(this).css('opacity', '1');
+                $('#bigImgBox').animate({top: -160}, 170);
+            });
+            $('.after-3').mouseenter(function () {
+                $('#greenBox').animate({top: 112}, 170);
+                $('.img-two').css('opacity', '0.8');
+                $(this).css('opacity', '1');
+                $('#bigImgBox').animate({top: -320}, 170);
+            });
+//            切换信息列表
+            $('.new-zw').click(function () {
+                $(this).css({
+                    'background-color': '#fff',
+                    'color': '#333',
+                    'border-top': '3px solid #00b38a',
+                });
+                $('#newZw').show();
+                $('.hot-zw').css({
+                    'border-top': 'none',
+                    'background-color': '#f6f6f6',
+                    'color': '#999999;'
+                });
+                $('#hotZw').hide();
+            });
+            $('.hot-zw').click(function () {
+                $(this).css({
+                    'background-color': '#fff',
+                    'color': '#333',
+                    'border-top': '3px solid #00b38a',
+                })
+                $('#hotZw').show();
+                $('.new-zw').css({
+                    'border-top': 'none',
+                    'background-color': '#f6f6f6',
+                    'color': '#999999;'
+                });
+                $('#newZw').hide();
+            });
+
+
+//            隐藏的名片
+            $('.hideBox').mouseenter(function () {
+                $(this).find('.hide-nameCard').show();
+            });
+            $('.hideBox').mouseleave(function () {
+                $(this).find('.hide-nameCard').hide();
+            });
+
+//            底部隐藏的二维码部分
+            $('.lg-new').mouseenter(function () {
+                $('.lg-new img').show();
+            });
+            $('.lg-new').mouseleave(function () {
+                $('.lg-new img').hide();
+            });
+
+            $('.mafan').mouseenter(function () {
+                $('.mafan img').show();
+            });
+            $('.mafan').mouseleave(function () {
+                $('.mafan img').hide();
+            });
+
+//            top小火箭
+
+            $(window).scroll(function () {
+                if (($(document).height() - $(window).height() - $(this).scrollTop()) <= 68) {
+                    $('.fixed-1').css({position: 'absolute', bottom: '100px'});
+                    $('#huojian-box').css({position: 'absolute', bottom: '150px'});
+
+                } else {
+                    $('.fixed-1').css({position: 'fixed', bottom: '38px'});
+                    $('#huojian-box').css({position: 'fixed', bottom: '70px'})
+                }
+
+                if ($(document).scrollTop() > 0) {
+                    $('.huojian').show();
+                } else {
+                    $('.huojian').hide();
+                }
+            });
+
+
+        });
+
+
+    </script>
+
+</head>
+<body style="height:2463px;">
+<!--黑色部分-->
+<div class="black">
+    <div class="app0">
+        <a href="#" class="green-app">拉钩APP</a>
+        <a href="#" class="app2">进入企业版</a>
+    </div>
+    <div class="app">
+        <a href="#" class="app1">登陆</a>
+        <a href="#" class="app2">注册</a>
+    </div>
+</div>
+<!--灰色头部-->
+<div class="gary-head">
+    <div class="juzhong">
+        <div class="quanguo">
+            <a href="#" class="logo-1"></a>
+            <span>全国站</span>
+            <a href="#" class="city">[切换城市]</a>
+        </div>
+        <div class="shouye">
+            <p><a href="#" class="sy">首页</a></p>
+            <p><a href="#" class="gongsi">公司</a></p>
+            <p><a href="#" class="gongsi">一拍</a></p>
+            <p><a href="#" class="gongsi">言职</a></p>
+            <p><a href="#" class="gongsi">大鲲</a></p>
+        </div>
+    </div>
+</div>
+<!--中心内容定位-->
+<div class="Position-big">
+    <!--左边列表-->
+    <div class="left-lb">
+        <div class="kongzhi">
+            <div class="js-block">
+                <p class="js">技术<span></span></p>
+                <a href="#" class="js-word">Java</a>
+                <a href="#" class="js-word">PHP</a>
+                <a href="#" class="js-word">C++</a>
+                <a href="#" class="js-word">Android</a>
+                <a href="#" class="js-word">iOS</a>
+                <a href="#" class="js-word">数据挖掘</a>
+                <a href="#" class="js-word">测试</a>
+                <a href="#" class="js-word">前端开发</a>
+                <a href="#" class="js-word">html5</a>
+                <a href="#" class="js-word">技术总监</a>
+                <a href="#" class="js-word">架构师</a>
+                <a href="#" class="js-word">CTO</a>
+            </div>
+            <div class="hied-js" style="top: 0">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">后端开发</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="green-word">Java<span class="you"></span></a>
+                        <a href="#" class="">Python<span class="you"></span></a>
+                        <a href="#" class="green-word">PHP<span class="you"></span></a>
+                        <a href="#" class="">.NET<span class="you"></span></a>
+                        <a href="#" class="">C#<span class="you"></span></a>
+                        <a href="#" class="green-word">C++<span class="you"></span></a>
+                        <a href="#" class="">C<span class="you"></span></a>
+                        <a href="#" class="">VB<span></span></a>
+                        <a href="#" class="">Delphi<span class="you"></span></a>
+                        <a href="#" class="">Perl<span class="you"></span></a>
+                        <a href="#" class="">Ruby<span class="you"></span></a>
+                        <a href="#" class="">Hadoop<span class="you"></span></a>
+                        <a href="#" class="">Node.js<span class="you"></span></a>
+                        <a href="#" class="green-word">数据挖掘<span></span></a>
+                        <a href="#" class="">自然语言处理<span class="you"></span></a>
+                        <a href="#" class="">搜索算法<span class="you"></span></a>
+                        <a href="#" class="">精准推荐<span class="you"></span></a>
+                        <a href="#" class="">全栈工程师<span class="you"></span></a>
+                        <a href="#" class="">Go<span></span></a>
+                        <a href="#" class="">ASP<span class="you"></span></a>
+                        <a href="#" class="">Shell<span class="you"></span></a>
+                        <a href="#" class="">后端开发其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">移动开发</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">HTML5<span class="you"></span></a>
+                        <a href="#" class="green-word">Android<span></span></a>
+                        <a href="#" class="green-word">iOS<span class="you"></span></a>
+                        <a href="#" class="">WP<span class="you"></span></a>
+                        <a href="#" class="">移动开发其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">前端开发</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">web前端<span class="you"></span></a>
+                        <a href="#" class="">Flash<span></span></a>
+                        <a href="#" class="green-word">html5<span class="you"></span></a>
+                        <a href="#" class="">JavaScript<span class="you"></span></a>
+                        <a href="#" class="">U3D<span class="you"></span></a>
+                        <a href="#" class="">COCOS2D-X<span class="you"></span></a>
+                        <a href="#" class="">前端开发其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">测试</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">测试工程师<span class="you"></span></a>
+                        <a href="#" class="">自动化测试<span class="you"></span></a>
+                        <a href="#" class="">功能测试<span class="you"></span></a>
+                        <a href="#" class="">性能测试<span class="you"></span></a>
+                        <a href="#" class="">测试开发<span class="you"></span></a>
+                        <a href="#" class="">游戏测试<span class="you"></span></a>
+                        <a href="#" class="">白盒测试<span class="you"></span></a>
+                        <a href="#" class="">灰盒测试<span class="you"></span></a>
+                        <a href="#" class="">黑盒测试<span class="you"></span></a>
+                        <a href="#" class="">手机测试<span class="you"></span></a>
+                        <a href="#" class="">硬件测试<span class="you"></span></a>
+                        <a href="#" class="">测试经理<span class="you"></span></a>
+                        <a href="#" class="">测试其他<span class=""></span></a>
+
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">运维</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">运维工程师<span class="you"></span></a>
+                        <a href="#" class="">运维开发工程师<span class="you"></span></a>
+                        <a href="#" class="">网络工程<span class="you"></span></a>
+                        <a href="#" class="">系统工程师<span class="you"></span></a>
+                        <a href="#" class="">IT支持<span class="you"></span></a>
+                        <a href="#" class="">IDC<span class="you"></span></a>
+                        <a href="#" class="">F5<span class="you"></span></a>
+                        <a href="#" class="">系统管理员<span class="you"></span></a>
+                        <a href="#" class="">病毒分析<span class="you"></span></a>
+                        <a href="#" class="">WEB安全<span class="you"></span></a>
+                        <a href="#" class="">网络安全<span class="you"></span></a>
+                        <a href="#" class="">系统安全<span class="you"></span></a>
+                        <a href="#" class="">运维经理<span class="you"></span></a>
+                        <a href="#" class="">运维其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">DBA</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">MySQL<span class="you"></span></a>
+                        <a href="#" class="">SQLSerevr<span class="you"></span></a>
+                        <a href="#" class="">Oracle<span class="you"></span></a>
+                        <a href="#" class="">DB2<span class="you"></span></a>
+                        <a href="#" class="">MongoDB<span class="you"></span></a>
+                        <a href="#" class="">ETL<span class="you"></span></a>
+                        <a href="#" class="">Hive<span class="you"></span></a>
+                        <a href="#" class="">数据仓库<span class="you"></span></a>
+                        <a href="#" class="">DBA其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">技术经理<span class="you"></span></a>
+                        <a href="#" class="green-word">技术总监<span class="you"></span></a>
+                        <a href="#" class="green-word">架构师<span class="you"></span></a>
+                        <a href="#" class="green-word">CTO<span class="you"></span></a>
+                        <a href="#" class="">MongoDB<span class="you"></span></a>
+                        <a href="#" class="">运维总监<span class=""></span></a>
+                        <a href="#" class="">技术合伙人<span class="you"></span></a>
+                        <a href="#" class="">项目总监<span class="you"></span></a>
+                        <a href="#" class="">测试总监<span class="you"></span></a>
+                        <a href="#" class="">安全专家<span class=""></span></a>
+                        <a href="#" class="">高端技术职位其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">项目管理</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">项目经理<span class="you"></span></a>
+                        <a href="#" class="">项目助理<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">硬件开发</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">硬件<span class="you"></span></a>
+                        <a href="#" class="">嵌入式<span class="you"></span></a>
+                        <a href="#" class="">自动化<span class="you"></span></a>
+                        <a href="#" class="">单片机<span class="you"></span></a>
+                        <a href="#" class="">电路设计<span class="you"></span></a>
+                        <a href="#" class="">驱动开发<span class=""></span></a>
+                        <a href="#" class="">系统集成<span class="you"></span></a>
+                        <a href="#" class="">FPGA开发<span class="you"></span></a>
+                        <a href="#" class="">DSP开发<span class="you"></span></a>
+                        <a href="#" class="">ARM开发<span class="you"></span></a>
+                        <a href="#" class="">PCB开发<span class=""></span></a>
+                        <a href="#" class="">模具设计<span class="you"></span></a>
+                        <a href="#" class="green-word">热传导<span class="you"></span></a>
+                        <a href="#" class="">材料工程师<span class="you"></span></a>
+                        <a href="#" class="">精益工程师<span class="you"></span></a>
+                        <a href="#" class="">射频工程师<span class=""></span></a>
+                        <a href="#" class="">硬件开发其他<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">企业软件</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">实施工程师<span class="you"></span></a>
+                        <a href="#" class="">售前工程师<span class="you"></span></a>
+                        <a href="#" class="">售后工程师<span class="you"></span></a>
+                        <a href="#" class="">BI工程师<span class=""></span></a>
+                        <a href="#" class="">企业软件其他<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kongzhi">
+            <div class="js-block">
+                <p class="js">产品<span></span></p>
+                <a href="#" class="js-word">产品总监</a>
+                <a href="#" class="js-word">产品经理</a>
+                <a href="#" class="js-word">数据产品经理</a>
+                <a href="#" class="js-word">游戏策划</a>
+            </div>
+            <div class="hied-js" style="top:130px">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">产品经理</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="green-word">产品经理<span class="you"></span></a>
+                        <a href="#" class="">网页产品经理<span class="you"></span></a>
+                        <a href="#" class="">移动产品经理<span class="you"></span></a>
+                        <a href="#" class="">产品助理<span class=""></span></a>
+                        <a href="#" class="green-word">数据产品经理<span class="you"></span></a>
+                        <a href="#" class="">电商产品经<span class="you"></span></a>
+                        <a href="#" class="green-word">游戏策划<span class="you"></span></a>
+                        <a href="#" class="">产品实习生<span></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">产品设计师</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">网页产品设计师<span class="you"></span></a>
+                        <a href="#" class="">无线产品设计师<span></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">产品部经理<span class="you"></span></a>
+                        <a href="#" class="green-word">产品总监<span class="you"></span></a>
+                        <a href="#" class="">游戏制作人<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kongzhi">
+            <div class="js-block">
+                <p class="js">设计<span></span></p>
+                <a href="#" class="js-word">UI设计师</a>
+                <a href="#" class="js-word">交互设计</a>
+                <a href="#" class="js-word">网页设计师</a>
+                <a href="#" class="js-word">平面设计师</a>
+                <a href="#" class="js-word">视觉设计师</a>
+            </div>
+            <div class="hied-js" style="top:198px">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">视觉设计</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="green-word">网页设计师<span class="you"></span></a>
+                        <a href="#" class="">Flash设计师<span class="you"></span></a>
+                        <a href="#" class="">APP设计师<span class="you"></span></a>
+                        <a href="#" class="green-word">UI设计师<span class=""></span></a>
+                        <a href="#" class="green-word">平面设计师<span class="you"></span></a>
+                        <a href="#" class="">美术设计师（2D/3D）<span class="you"></span></a>
+                        <a href="#" class="">广告设计师<span class=""></span></a>
+                        <a href="#" class="">多媒体设计师<span class="you"></span></a>
+                        <a href="#" class="">原画师<span class="you"></span></a>
+                        <a href="#" class="">游戏特效<span class="you"></span></a>
+                        <a href="#" class="">游戏界面设计师<span></span></a>
+                        <a href="#" class="green-word">视觉设计师<span class="you"></span></a>
+                        <a href="#" class="">游戏场景<span class="you"></span></a>
+                        <a href="#" class="">游戏角色<span class="you"></span></a>
+                        <a href="#" class="">游戏动作<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">用户研究</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">数据分析师<span class="you"></span></a>
+                        <a href="#" class="">用户研究员<span class="you"></span></a>
+                        <a href="#" class="">游戏数值策划<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">设计经理/主管<span class="you"></span></a>
+                        <a href="#" class="green-word">设计总监<span class="you"></span></a>
+                        <a href="#" class="">视觉设计经理/主管<span class="you"></span></a>
+                        <a href="#" class="">视觉设计总监<span class=""></span></a>
+                        <a href="#" class="">交互设计经理/主管<span class="you"></span></a>
+                        <a href="#" class="">交互设计总监<span class="you"></span></a>
+                        <a href="#" class="">用户研究经理/主管<span class=""></span></a>
+                        <a href="#" class="">用户研究总监<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kongzhi">
+            <div class="js-block">
+                <p class="js">运营<span></span></p>
+                <a href="#" class="js-word">新媒体运营</a>
+                <a href="#" class="js-word">编辑</a>
+                <a href="#" class="js-word">数据运营</a>
+                <a href="#" class="js-word">COO</a>
+            </div>
+            <div class="hied-js" style="top:350px">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">运营</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">内容运营<span class="you"></span></a>
+                        <a href="#" class="">产品运营<span class="you"></span></a>
+                        <a href="#" class="green-word">数据运营<span class="you"></span></a>
+                        <a href="#" class="">用户运营<span class="you"></span></a>
+                        <a href="#" class="">活动运营<span class=""></span></a>
+                        <a href="#" class="">商家运营<span class="you"></span></a>
+                        <a href="#" class="">品类运营<span class="you"></span></a>
+                        <a href="#" class="">游戏运营<span class="you"></span></a>
+                        <a href="#" class="">网络推广<span class="you"></span></a>
+                        <a href="#" class="">运营专员<span class=""></span></a>
+                        <a href="#" class="">网店运营<span class="you"></span></a>
+                        <a href="#" class="green-word">新媒体运营<span class="you"></span></a>
+                        <a href="#" class="">海外运营<span class="you"></span></a>
+                        <a href="#" class="">运营经理<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">编辑</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">副编辑<span class="you"></span></a>
+                        <a href="#" class="">内容编辑<span class="you"></span></a>
+                        <a href="#" class="">文案策划<span class="you"></span></a>
+                        <a href="#" class="">记者<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">客服</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">售前咨询<span class="you"></span></a>
+                        <a href="#" class="">售后客服<span class="you"></span></a>
+                        <a href="#" class="">淘宝客服<span class="you"></span></a>
+                        <a href="#" class="">客服经理<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">主编<span class="you"></span></a>
+                        <a href="#" class="green-word">运营总监<span class="you"></span></a>
+                        <a href="#" class="green-word">COO<span class="you"></span></a>
+                        <a href="#" class="">客服总监<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kongzhi">
+            <div class="js-block">
+                <p class="js">市场与销售<span></span></p>
+                <a href="#" class="js-word">市场推广</a>
+                <a href="#" class="js-word">市场总监</a>
+                <a href="#" class="js-word">市场策划</a>
+                <a href="#" class="js-word">BD</a>
+                <a href="#" class="js-word">销售总监</a>
+                <a href="#" class="js-word">销售经理</a>
+            </div>
+            <div class="hied-js" style="top:350px">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">市场/营销</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="green-word">市场策划<span class="you"></span></a>
+                        <a href="#" class="">市场顾问<span class="you"></span></a>
+                        <a href="#" class="">市场营销<span class="you"></span></a>
+                        <a href="#" class="green-word">市场推广<span class="you"></span></a>
+                        <a href="#" class="">SEO<span class="you"></span></a>
+                        <a href="#" class="">SEM<span class=""></span></a>
+                        <a href="#" class="">商务渠道<span class="you"></span></a>
+                        <a href="#" class="">商务数据分析<span class="you"></span></a>
+                        <a href="#" class="">活动策划<span class="you"></span></a>
+                        <a href="#" class="">网络营销<span class="you"></span></a>
+                        <a href="#" class="">海外市场<span class=""></span></a>
+                        <a href="#" class="">政府关系<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">公关</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">媒介经理<span class="you"></span></a>
+                        <a href="#" class="">广告协调<span class="you"></span></a>
+                        <a href="#" class="">品牌公关<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">销售</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">销售专员<span class="you"></span></a>
+                        <a href="#" class="green-word">销售经理<span class="you"></span></a>
+                        <a href="#" class="">客户代表<span class="you"></span></a>
+                        <a href="#" class="">大客户代表<span class="you"></span></a>
+                        <a href="#" class="">BD经理<span class=""></span></a>
+                        <a href="#" class="">商务渠道<span class="you"></span></a>
+                        <a href="#" class="">渠道销售<span class="you"></span></a>
+                        <a href="#" class="">代理商销售<span class="you"></span></a>
+                        <a href="#" class="">销售助理<span class="you"></span></a>
+                        <a href="#" class="">电话销售<span class=""></span></a>
+                        <a href="#" class="">销售顾问<span class="you"></span></a>
+                        <a href="#" class="">商品经理<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="green-word">市场总监<span class="you"></span></a>
+                        <a href="#" class="green-word">销售总监<span class="you"></span></a>
+                        <a href="#" class="">商务总监<span class="you"></span></a>
+                        <a href="#" class="">CMO<span class="you"></span></a>
+                        <a href="#" class="">公关总监<span class=""></span></a>
+                        <a href="#" class="">采购总监<span class="" you></span></a>
+                        <a href="#" class="">投资总监<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">供应链</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">物流<span class="you"></span></a>
+                        <a href="#" class="">仓储<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">采购</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">采购专员<span class="you"></span></a>
+                        <a href="#" class="">采购经理<span class="you"></span></a>
+                        <a href="#" class="">商品经理<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">投资</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">分析师<span class="you"></span></a>
+                        <a href="#" class="">投资顾问<span class="you"></span></a>
+                        <a href="#" class="">投资经理<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kongzhi">
+            <div class="js-block width-dandu">
+                <p class="js">职能<span></span></p>
+                <a href="#" class="js-word">HR</a>
+                <a href="#" class="js-word">行政</a>
+                <a href="#" class="js-word">财务</a>
+                <a href="#" class="js-word">审计</a>
+            </div>
+            <div class="hied-js" style="top:550px">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">人力资源</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">人事/HR<span class="you"></span></a>
+                        <a href="#" class="">培训经理<span class="you"></span></a>
+                        <a href="#" class="">薪资福利经理<span class="you"></span></a>
+                        <a href="#" class="">绩效考核经理<span class=""></span></a>
+                        <a href="#" class="">人力资源<span class="you"></span></a>
+                        <a href="#" class="">招聘<span class="you"></span></a>
+                        <a href="#" class="">HRBP<span class="you"></span></a>
+                        <a href="#" class="">员工关系<span></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">行政</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">助理<span class="you"></span></a>
+                        <a href="#" class="">前台<span class="you"></span></a>
+                        <a href="#" class="green-word">行政<span class="you"></span></a>
+                        <a href="#" class="">总助<span class="you"></span></a>
+                        <a href="#" class="">文秘<span></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">行政总监/经理<span class="you"></span></a>
+                        <a href="#" class="">财务总监/经理<span class="you"></span></a>
+                        <a href="#" class="green-word">HRD/HRM<span class="you"></span></a>
+                        <a href="#" class="">CFO<span class="you"></span></a>
+                        <a href="#" class="">CEO<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">法务</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">法务<span class="you"></span></a>
+                        <a href="#" class="">法务<span class="you"></span></a>
+                        <a href="#" class="">专利<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kongzhi">
+            <div class="js-block width-dandu">
+                <p class="js jr">金融<span></span></p>
+                <a href="#" class="js-word tz">投资</a>
+                <a href="#" class="js-word tz">融资</a>
+                <a href="#" class="js-word tz">并购</a>
+                <a href="#" class="js-word tz">风控</a>
+            </div>
+            <div class="hied-js" style="top:607px">
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">投融资</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">投资经理<span class="you"></span></a>
+                        <a href="#" class="">分析师<span class="you"></span></a>
+                        <a href="#" class="">投资助理<span class="you"></span></a>
+                        <a href="#" class="green-word">融资<span class="you"></span></a>
+                        <a href="#" class="green-word">并购<span class="you"></span></a>
+                        <a href="#" class="">行业研究<span class=""></span></a>
+                        <a href="#" class="">投资者关系<span class="you"></span></a>
+                        <a href="#" class="">资产管理<span class="you"></span></a>
+                        <a href="#" class="">理财顾问<span class="you"></span></a>
+                        <a href="#" class="">交易员<span></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">风控</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="green-word">风控<span class="you"></span></a>
+                        <a href="#" class="">资信评估<span class="you"></span></a>
+                        <a href="#" class="">合规稽查<span class="you"></span></a>
+                        <a href="#" class="">律师<span></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">审计税务</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">审计<span class="you"></span></a>
+                        <a href="#" class="">法务<span class="you"></span></a>
+                        <a href="#" class="">会计<span class="you"></span></a>
+                        <a href="#" class="">清算<span class=""></span></a>
+                    </div>
+                </div>
+                <div class="hdkf-block">
+                    <p><a href="#" class="hdkf">高端职位</a></p>
+                    <div class="hdkf-word">
+                        <a href="#" class="">投资总监<span class="you"></span></a>
+                        <a href="#" class="">融资总监<span class="you"></span></a>
+                        <a href="#" class="">并购总监<span class="you"></span></a>
+                        <a href="#" class="">风控总监<span class="you"></span></a>
+                        <a href="#" class="">副总裁<span class=""></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--订阅职位-->
+        <div class="dyzw">
+            <a href="#">订阅职位</a>
+        </div>
+    </div>
+    <!--右边内容部分-->
+    <div class="right-dingwei">
+        <div class="sousuo">
+            <input class="sousuo-1" type="text" value="客户经理"/><input class="sousuo-2" type="submit" value="搜索"/>
+        </div>
+        <p class="remen">
+            <span>热门搜索:</span>
+            <a href="#">销售</a>
+            <a href="#">Java</a>
+            <a href="#">前端开发</a>
+            <a href="#">极速入职</a>
+            <a href="#">架构师</a>
+            <a href="#">产品经理</a>
+            <a href="#">编辑</a>
+            <a href="#">html5</a>
+            <a href="#">拉钩APP</a>
+        </p>
+        <div class="img-all">
+            <div id="bigImgBox">
+                <img class="img-one show-1"
+                     src="https://www.lgstatic.com/i/image/M00/21/72/CgpEMlkPFPyARYUsAAmjn8tOgZg280.PNG"/>
+                <img class="img-one aaa show-2 "
+                     src="https://www.lgstatic.com/i/image/M00/1D/03/CgpFT1kMSuuAPD14AAMqy62CtOw258.PNG"/>
+                <img class="img-one aaa show-3"
+                     src="https://www.lgstatic.com/i/image/M00/20/C7/CgpEMlkMYUuAA7m4AATuvBF2R1s961.PNG"/>
+            </div>
+            <div class="img-right">
+                <p>
+                    <img class="img-two after-1"
+                         src="https://www.lgstatic.com/i/image/M00/1D/B9/CgpFT1kPFQCAfedvAAAVayxoP8w814.PNG"/>
+                </p>
+                <p>
+                    <img class="img-two after-2"
+                         src="https://www.lgstatic.com/i/image/M00/1D/03/CgpFT1kMSu6AadihAAAjgD48FRE636.JPG"/>
+                </p>
+                <p>
+                    <img class="img-two after-3"
+                         src="https://www.lgstatic.com/i/image/M00/1D/0D/CgpFT1kMYU2AIK5sAABC_Y-157o948.PNG"/>
+                </p>
+                <div id="greenBox"></div>
+            </div>
+        </div>
+        <!--js部分的6个图-->
+        <div class="tupian-all">
+            <div class="all">
+                <img class="lower" src="http://www.lgstatic.com/i/image/M00/B6/E8/CgqKkVi_01eARaJ5AACH93k8pnE453.png"/>
+                <a href="#" class="upper">
+                    <h2 class="big-size">大树智康</h2>
+                    <p class="kong"></p>
+                    <p class="small-size">在人类一直的进步中寻找最合适的幸福</p>
+                </a>
+            </div>
+            <div class="all">
+                <img class="lower" src="http://www.lgstatic.com/i/image/M00/72/58/Cgp3O1gsKLiAD7BZAABAduUjwug436.jpg"/>
+                <a href="#" class="upper">
+                    <h2 class="big-size">数码港</h2>
+                    <p class="kong"></p>
+                    <p class="small-size">公司推崇讲诚信，重品质，鼓励创新，相互协作</p>
+                </a>
+            </div>
+            <div class="all">
+                <img class="lower" src="http://www.lgstatic.com/i/image/M00/BF/D8/CgqKkVjQ4HiAYpyqAAGaH10wOVA297.jpg"/>
+                <a href="#" class="upper">
+                    <h2 class="big-size">90KM</h2>
+                    <p class="kong"></p>
+                    <p class="small-size">用心做好游戏！</p>
+                </a>
+            </div>
+            <div class="all">
+                <img class="lower" src="http://www.lgstatic.com/i/image/M00/09/73/CgpEMljcWI6ARrVbAANJLY3YkVg619.png"/>
+                <a href="#" class="upper">
+                    <h2 class="big-size">锦元黄金</h2>
+                    <p class="kong"></p>
+                    <p class="small-size">锦元黄金以实现藏金于民，挖掘中国文化使命。</p>
+                </a>
+            </div>
+            <div class="all">
+                <img class="lower" src="http://www.lgstatic.com/i/image/M00/0F/9B/CgpFT1jvJMaAM44rAAP1AzRqJA4941.png"/>
+                <a href="#" class="upper">
+                    <h2 class="big-size">房大办公</h2>
+                    <p class="kong"></p>
+                    <p class="small-size">覆盖全球100个城市的办公空间</p>
+                </a>
+            </div>
+            <div class="all all-6">
+                <img class="lower" src="http://www.lgstatic.com/i/image/M00/BE/04/Cgp3O1jLdUqAQSEvAACiW5d7yHg712.png"/>
+                <a href="#" class="upper">
+                    <h2 class="big-size">阳光快线</h2>
+                    <p class="kong"></p>
+                    <p class="small-size">引领快乐办公时代！</p>
+                </a>
+            </div>
+        </div>
+        <!--热门职位页-->
+        <div class="List-header">
+            <p class="List-content hot-zw">热门职位</p>
+            <p class="List-content new-zw">最新职位</p>
+        </div>
+        <div id="hotZw">
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">Java开发工程师&nbsp;[长沙]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="lianjie"></div>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">8k-15k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，金融/初创型（未融资）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"五险一金，双休，节假日福利，年终奖"</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="newZw">
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">运营专员&nbsp;[重庆]</a>
+                    <span>3天前发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie"></p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">联信科技</p>
+                <p class="daiyu">
+                    <span class="gongzi">3k-5k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">货拉拉手机打车软件</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>后端开发</span>
+                            <span>软件</span>
+                        </p>
+                        <p class="company-xijie wuxian">"发展前景大，个性化管理"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-xijie">
+                <div class="job-name">
+                    <a href="#" class="job-name1">活动运营经理&nbsp;[北京]</a>
+                    <span>18:15发布</span>
+                    <div class="hideBox">
+                        <a href="#" class="name-card"></a>
+                        <div class="hide-nameCard">
+                            <div class="hide-xinxi">
+                                <div class="picture"><span>h</span></div>
+                                <p class="ganwei-name">hr</p>
+                                <p class="suoxie">HR</p>
+                                <p class="hi">Hi，对我发布的职位感兴趣？用拉钩APP扫码，直接和我聊聊吧！</p>
+                            </div>
+                            <canvas width="116" height="116"></canvas>
+                            <span class="xuanzhuan"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="company-name">今日头条</p>
+                <p class="daiyu">
+                    <span class="gongzi">12k-22k</span>
+                    <span class="jingyan">经验3-5年/大专</span>
+                </p>
+                <p class="company-xijie">移动互联网，数据服务/成熟型C轮）</p>
+                <div class="grey-xijie">
+                    <div class="biaoqian">
+                        <p class="biaoqian-left">
+                            <span>内容</span>
+                        </p>
+                        <p class="company-xijie wuxian">"弹性工作，免费三餐，房租补贴，休闲下..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="look-more">
+            <span class="lookMore">查看更多</span>
+        </a>
+        <!--友情链接部分-->
+        <div class="friendship">
+            <span class="friend">友情链接</span>
+            <a href="#">拉勾网</a><span class="fuhao">| </span>
+            <a href="#">大鲲</a><span class="fuhao">|</span>
+            <a href="#">招聘</a><span class="fuhao">|</span>
+            <a href="#">app下载</a><span class="fuhao">|</span>
+            <a href="#">拉钩云</a><span class="fuhao">|</span>
+            <a href="#">中大网校</a>
+            <a href="#">人人都是产品经理</a><span class="fuhao">|</span>
+            <a href="#">教师招聘</a><span class="fuhao">|</span>
+            <a href="#">新疆人才网</a><span class="fuhao">|</span>
+            <a href="#" id="zhankai">展开</a>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="footer-dingwei">
+        <span class="foot-img"></span>
+        <div class="foot-word">
+            <a href="#" class="qr lg-new">拉钩APP<span></span><img
+                    src="https://www.lgstatic.com/i/image/M00/8A/35/Cgp3O1h0u3yAHBOLAAEEpK9-Koc621.JPG"/></a>
+            <a href="#" class="bj">拉钩微博</a>
+            <a href="#" class="qr bj mafan">拉钩微信 <img
+                    src="https://www.lgstatic.com/image2/M00/18/45/CgpzWlZNl0qAZitPAABXEpAOJx0071.JPG"/></a>
+            <a href="#" class="bj">版本更新</a>
+            <a href="#" class="bj">帮助中心</a>
+            <a href="#" class="bj">联系我们</a>
+            <a href="#" class="bj">招聘解决方案</a>
+            <span>服务热线：</span>
+            <span class="qrs">4006-2828-35 (9:00 -18:00)</span>
+        </div>
+        <div class="footer-2">
+            <div class="footer-3">
+                <a href="#"><img
+                        src="//www.lgstatic.com/www/static/common/widgets/footer_c/layout/img/security_association_da335dd.png"/></a>
+                <div class="footer-4">
+                    <span>@2017 Lagou</span>
+                    <a href="#">京ICP备14023790号-2</a>
+                    <span>京公网安备11010802017116号</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部js部分-->
+<!--固定定位的横条-->
+<div class="fixed-1">
+    <div class="fixed">
+        <div class="zai"></div>
+        <img src="//www.lgstatic.com/www/static/common/widgets/login_toolbar/img/footbar_logo_cccc78d.png"/>
+        <div class="zai-dw">
+            <p class="zai-1">194247</p>
+            <span class="zai-gs"></span>
+            <p>3065571</p>
+            <span class="zai-zw"></span>
+        </div>
+        <p id="shenlv"><a href=" #" class="dark-green"></a></p>
+        <div id="red">
+            <p><a href="#"></a></p>
+        </div>
+    </div>
+</div>
+<div id="huojian-box">
+    <a href="#" class="huojian"></a>
+    <a href="#" class="fankui">
+        <span></span>
+        <p class="am">我要反馈</p>
+    </a>
+</div>
+</body>
+</html>
